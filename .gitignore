@@ -1,0 +1,6 @@
+/dist/
+/build/
+/SmartEvaluator-war/build/
+/SmartEvaluator-war/dist/
+/SmartEvaluator-ejb/build/
+/SmartEvaluator-ejb/dist/

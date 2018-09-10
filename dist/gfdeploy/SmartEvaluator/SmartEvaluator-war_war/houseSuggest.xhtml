@@ -56,8 +56,8 @@
         <p:accordionPanel multiple="true" style = "width: 90%; position: fixed; left: 5%" >
             <p:tab title="House suggests based on your informantion analysis">
                 <h:form id="houseList" style = "width: 80%">
-                    <p:repeat value="#{homeBuyerManagedBean.houseList}" var="house"> 
-                       <h:panelGrid columns="1" style="width:100%">
+                    <p:repeat value="#{houseListManagedBean.houseList}" var="house"> 
+                       <h:panelGrid columns="10" style="width:100%">
                             <p:outputPanel>
                                 <h:panelGrid columns="2" cellpadding="5">
                                     <h:outputText value="House Name" />
@@ -68,16 +68,19 @@
 
                                     <h:outputText value="Area" />
                                     <h:outputText value="#{house.area}" style="font-weight: bold"/>
+                                    <h:outputText value=" sqauare feet" style="font-weight: bold"/>
 
-                                    <h:outputText value="Total Price" />
+                                    <h:outputText value="Total Price:" />
+                                    <h:outputText value=" $" style="font-weight: bold"/>
                                     <h:outputText value="#{house.totalPrice}" style="font-weight: bold"/>
+                                    <h:outputText value="(SGD)" style="font-weight: bold"/>
                                     
                                     <h:outputText value="Unit Price" />
+                                    <h:outputText value=" $" style="font-weight: bold"/>
                                     <h:outputText value="#{house.unitPrice}" style="font-weight: bold"/>
+                                    <h:outputText value="(SGD)/square feet" style="font-weight: bold"/>
+                                    
                                 </h:panelGrid>
-                                <f:view contentType="text/html">
-                                        <p:gmap center="41.381542, 2.122893" zoom="15" type="HYBRID" style="width:100%;height:400px" />
-                                </f:view>
                             </p:outputPanel>
                         </h:panelGrid>
                         <hr />

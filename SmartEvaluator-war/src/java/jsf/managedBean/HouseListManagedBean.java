@@ -34,9 +34,11 @@ public class HouseListManagedBean implements Serializable{
         context = FacesContext.getCurrentInstance();
         session = (HttpSession) context.getExternalContext().getSession(true);
         houseList = (List<House>) session.getAttribute("houseList");
+        System.out.println(houseList.size()+"   HOUSE LIST IS THIS BIG!");
     }
     
     public List<House> getHouseList() {
+        System.out.println(houseList.size()+"   NOW GETTING HOUSE LIST!");
         return houseList;
     }
 
