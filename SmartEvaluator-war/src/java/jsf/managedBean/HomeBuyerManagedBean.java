@@ -9,10 +9,10 @@ import ejb.session.stateless.HomeBuyerControllerLocal;
 import entity.HomeBuyer;
 import entity.House;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.List;
 import javax.faces.event.ActionEvent;
 import javax.ejb.EJB;
-import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -24,7 +24,7 @@ import javax.faces.bean.RequestScoped;
 
 @ManagedBean
 @RequestScoped
-public class HomeBuyerManagedBean {
+public class HomeBuyerManagedBean implements Serializable{
 
     @EJB(name = "HomeBuyerControllerLocal")
     private HomeBuyerControllerLocal homeBuyerControllerLocal;
@@ -61,6 +61,8 @@ public class HomeBuyerManagedBean {
         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("expense", homeBuyer.getMonthlyExpense());
         
         houseList = homeBuyerControllerLocal.getHouseList(homeBuyer);
+        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("houseList", houseList);
+        
         FacesContext.getCurrentInstance().getExternalContext().redirect("houseSuggest.xhtml");
     }
 }
