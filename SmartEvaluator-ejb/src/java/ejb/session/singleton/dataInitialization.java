@@ -54,7 +54,7 @@ public class dataInitialization {
     
     private void loadHouseData(){
         System.out.print("Start handling data");
-        File file=new File("/Users/HXY/SE2/SmartEvaluator/his3.xls");
+        File file=new File("/Users/HXY/SE2/SmartEvaluator/housingInfo.xls");
         try{
             InputStream stream=new FileInputStream(file.getAbsolutePath());
             Workbook wb=Workbook.getWorkbook(stream);
@@ -72,9 +72,6 @@ public class dataInitialization {
                 //System.out.print(houseName);
                 House house=new House(Address,houseName,link,Price,unitPrice,longitute,latitute,area);
                 houseList.add(house);
-//                em.persist(house);
-
-             
             }
             System.out.print("Finished!!!!!");
         }catch(Exception e){

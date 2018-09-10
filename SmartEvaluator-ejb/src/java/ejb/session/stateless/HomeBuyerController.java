@@ -73,7 +73,7 @@ public class HomeBuyerController implements HomeBuyerControllerLocal {
         
         for(int house = 0; house < dataInitialization.houseList.size(); house++){
             if(totalPayable-dataInitialization.houseList.get(house).getTotalPrice()>0
-               && totalPayable-dataInitialization.houseList.get(house).getTotalPrice()<100000){
+               && totalPayable-dataInitialization.houseList.get(house).getTotalPrice()<500000){
                returnHouseList.add(dataInitialization.houseList.get(house));
             }
         }
