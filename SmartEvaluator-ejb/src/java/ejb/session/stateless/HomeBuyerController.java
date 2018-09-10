@@ -18,12 +18,13 @@ import static ejb.session.singleton.dataInitialization.houseList;
  */
 @Stateless
 public class HomeBuyerController implements HomeBuyerControllerLocal {
-    ArrayList <House> returnHouseList=new ArrayList<>();
+    ArrayList <House> returnHouseList;
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
     
-    
+    @Override
     public ArrayList <House> getHouseList(HomeBuyer buyer){
+        returnHouseList =new ArrayList<>();
         
         System.out.print(dataInitialization.houseList.get(0).getAddress());
         
@@ -41,10 +42,9 @@ public class HomeBuyerController implements HomeBuyerControllerLocal {
         //get house
 //        System.out.print(dataInitialization.houseList);
         //find proper house
-        
         System.out.print(returnHouseList.size());
         for(int h = 0;h<returnHouseList.size();h++){
-            System.out.print(returnHouseList.get(h).getHouseName());
+            System.out.print("1111111111111"+returnHouseList.get(h).getHouseName());
         }
         return returnHouseList;
     }
