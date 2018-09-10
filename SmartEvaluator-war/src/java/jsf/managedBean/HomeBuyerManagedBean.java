@@ -16,6 +16,8 @@ import javax.ejb.EJB;
 import javax.faces.context.FacesContext;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.view.ViewScoped;
+import javax.enterprise.context.SessionScoped;
 
 /**
  *
@@ -23,7 +25,7 @@ import javax.faces.bean.RequestScoped;
  */     
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class HomeBuyerManagedBean implements Serializable{
 
     @EJB(name = "HomeBuyerControllerLocal")
@@ -31,7 +33,7 @@ public class HomeBuyerManagedBean implements Serializable{
 
     private HomeBuyer homeBuyer;
     
-    public List<House> houseList;
+    private List<House> houseList;
     
     public HomeBuyerManagedBean() {
         homeBuyer = new HomeBuyer();
@@ -59,7 +61,8 @@ public class HomeBuyerManagedBean implements Serializable{
         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("savings", homeBuyer.getSavings());
         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("income", homeBuyer.getMonthlyIncome());
         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("expense", homeBuyer.getMonthlyExpense());
-        
+        System.out.println("homeBuyer name: " + homeBuyer.getName());
+        System.out.println("homeBuyer savings: " + homeBuyer.getSavings());
         houseList = homeBuyerControllerLocal.getHouseList(homeBuyer);
         
         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("houseList", houseList);

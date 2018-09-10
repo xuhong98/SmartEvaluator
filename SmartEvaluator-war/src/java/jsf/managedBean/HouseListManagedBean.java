@@ -7,22 +7,23 @@ package jsf.managedBean;
 
 import entity.House;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
+import javax.enterprise.context.SessionScoped;
+import javax.faces.view.ViewScoped;
 
 /**
  *
  * @author hongxu
  */
 @ManagedBean
-@RequestScoped
+@ViewScoped
 public class HouseListManagedBean implements Serializable{
 
-    public List<House> houseList;
+    private List<House> houseList;
     FacesContext context;
     HttpSession session;
     
@@ -31,6 +32,7 @@ public class HouseListManagedBean implements Serializable{
 
     @PostConstruct
     public void postConstruct() {
+        //System.out.println("又进来啦");
         context = FacesContext.getCurrentInstance();
         session = (HttpSession) context.getExternalContext().getSession(true);
         houseList = (List<House>) session.getAttribute("houseList");
@@ -38,7 +40,7 @@ public class HouseListManagedBean implements Serializable{
     }
     
     public List<House> getHouseList() {
-        System.out.println(houseList.size()+"   NOW GETTING HOUSE LIST!");
+
         return houseList;
     }
 

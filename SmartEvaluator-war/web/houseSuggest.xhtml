@@ -50,14 +50,13 @@
         </div>
     </div>
     
-    <!-- Header area -->
     <div id="header-wrapper" class="header-slider" style="background: url('https://sotapa.org/wp-content/uploads/2018/01/Showhouse-pic.jpg');background-repeat: no-repeat;
         background-size: 100% 100%;">
-        <p:accordionPanel multiple="true" style = "width: 90%; position: fixed; left: 5%" >
+        <p:accordionPanel multiple="true" style = "width: 90%; left: 5%" >
             <p:tab title="House suggests based on your informantion analysis">
                 <h:form id="houseList" style = "width: 80%">
                     <p:repeat value="#{houseListManagedBean.houseList}" var="house"> 
-                       <h:panelGrid columns="10" style="width:100%">
+                        <h:panelGrid columns="2">
                             <p:outputPanel>
                                 <h:panelGrid columns="2" cellpadding="5">
                                     <h:outputText value="House Name" />
@@ -67,19 +66,13 @@
                                     <h:outputText value="#{house.address}" style="font-weight: bold"/>
 
                                     <h:outputText value="Area" />
-                                    <h:outputText value="#{house.area}" style="font-weight: bold"/>
-                                    <h:outputText value=" sqauare feet" style="font-weight: bold"/>
+                                    <h:outputText value="#{house.area}sqft" style="font-weight: bold"/>
 
-                                    <h:outputText value="Total Price:" />
-                                    <h:outputText value=" $" style="font-weight: bold"/>
-                                    <h:outputText value="#{house.totalPrice}" style="font-weight: bold"/>
-                                    <h:outputText value="(SGD)" style="font-weight: bold"/>
+                                    <h:outputText value="Total Price" />
+                                    <h:outputText value="S$#{house.totalPrice}" style="font-weight: bold"/>
                                     
                                     <h:outputText value="Unit Price" />
-                                    <h:outputText value=" $" style="font-weight: bold"/>
-                                    <h:outputText value="#{house.unitPrice}" style="font-weight: bold"/>
-                                    <h:outputText value="(SGD)/square feet" style="font-weight: bold"/>
-                                    
+                                    <h:outputText value="S$#{house.unitPrice}" style="font-weight: bold"/>
                                 </h:panelGrid>
                             </p:outputPanel>
                         </h:panelGrid>
