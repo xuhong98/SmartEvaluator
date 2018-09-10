@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/HXY/Citi/SmartEvaluator/SmartEvaluator-war/src/java/jsf/managedBean/HomeBuyerManagedBean.java</file>
+            <file>file:/Users/HXY/SE2/SmartEvaluator/SmartEvaluator-war/web/index.xhtml</file>
+            <file>file:/Users/HXY/SE2/SmartEvaluator/SmartEvaluator-war/src/java/jsf/managedBean/HomeBuyerManagedBean.java</file>
+            <file>file:/Users/HXY/SE2/SmartEvaluator/SmartEvaluator-war/src/java/jsf/managedBean/HouseListManagedBean.java</file>
+            <file>file:/Users/HXY/SE2/SmartEvaluator/SmartEvaluator-war/web/houseSuggest.xhtml</file>
         </group>
     </open-files>
 </project-private>

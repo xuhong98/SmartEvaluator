@@ -3,7 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/HXY/Citi/SmartEvaluator/SmartEvaluator-ejb/src/java/ejb/session/singleton/dataInitialization.java</file>
+            <file>file:/Users/HXY/SE2/SmartEvaluator/SmartEvaluator-ejb/src/java/entity/HomeBuyer.java</file>
+            <file>file:/Users/HXY/SE2/SmartEvaluator/SmartEvaluator-ejb/src/java/ejb/session/stateless/HomeBuyerControllerLocal.java</file>
+            <file>file:/Users/HXY/SE2/SmartEvaluator/SmartEvaluator-ejb/src/java/ejb/session/singleton/dataInitialization.java</file>
+            <file>file:/Users/HXY/SE2/SmartEvaluator/SmartEvaluator-ejb/src/java/ejb/session/stateless/HomeBuyerController.java</file>
+            <file>file:/Users/HXY/SE2/SmartEvaluator/SmartEvaluator-ejb/src/java/entity/House.java</file>
         </group>
     </open-files>
 </project-private>

@@ -66,10 +66,11 @@ public class dataInitialization {
                 Long Price=Long.parseLong(sheet.getCell(2,i).getContents());
                 Long unitPrice=(long)Float.parseFloat(sheet.getCell(3,i).getContents());
                 Long area=Long.parseLong(sheet.getCell(4,i).getContents());
+                String link = sheet.getCell(5,i).getContents();
                 Long longitute=new Long("0");
                 Long latitute=new Long("0");
-                System.out.print(houseName);
-                House house=new House(Address,houseName,Price,unitPrice,longitute,latitute,area);
+                //System.out.print(houseName);
+                House house=new House(Address,houseName,link,Price,unitPrice,longitute,latitute,area);
                 houseList.add(house);
 //                em.persist(house);
 

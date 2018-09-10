@@ -28,6 +28,8 @@ public class House implements Serializable {
     
     private String houseName;
     
+    private String link;
+    
     private Long totalPrice;
     
     private Long unitPrice;
@@ -48,12 +50,14 @@ public class House implements Serializable {
 
     public House() {
     }
+    
 
-    public House(String address, String houseName, Long totalPrice, Long unitPrice, Long longitude, Long latitude, Long area) {
+    public House(String address, String houseName, String houseLink, Long totalPrice, Long unitPrice, Long longitude, Long latitude, Long area) {
         this.address = address;
         this.houseName = houseName;
         this.totalPrice = totalPrice;
         this.unitPrice = unitPrice;
+        this.link = houseLink;
         this.longitude = longitude;
         this.latitude = latitude;
         this.area = area;
@@ -65,6 +69,14 @@ public class House implements Serializable {
 
     public void setHouseName(String houseName) {
         this.houseName = houseName;
+    }
+    
+    public String getLink(){
+        return link;
+    }
+    
+    public void setLink(String houseLink){
+        this.link = houseLink;
     }
 
     public Long getTotalPrice() {

@@ -4,3 +4,5 @@
 /SmartEvaluator-war/dist/
 /SmartEvaluator-ejb/build/
 /SmartEvaluator-ejb/dist/
+/SmartEvaluator-war/nbproject/private/
+/SmartEvaluator-ejb/nbproject/private/
