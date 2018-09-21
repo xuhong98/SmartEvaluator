@@ -16,5 +16,5 @@ import entity.HomeBuyer;
  */
 @Local
 public interface HomeBuyerControllerLocal {
-    public ArrayList <House> getHouseList(HomeBuyer buyer);
+    public ArrayList <House> getHouseList(HomeBuyer buyer) throws Exception;
 }

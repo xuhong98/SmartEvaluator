@@ -15,9 +15,8 @@ import javax.faces.event.ActionEvent;
 import javax.ejb.EJB;
 import javax.faces.context.FacesContext;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
-import javax.faces.view.ViewScoped;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
 
 /**
  *
@@ -63,10 +62,13 @@ public class HomeBuyerManagedBean implements Serializable{
         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("expense", homeBuyer.getMonthlyExpense());
         System.out.println("homeBuyer name: " + homeBuyer.getName());
         System.out.println("homeBuyer savings: " + homeBuyer.getSavings());
-        houseList = homeBuyerControllerLocal.getHouseList(homeBuyer);
-        
-        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("houseList", houseList);
-        
-        FacesContext.getCurrentInstance().getExternalContext().redirect("houseSuggest.xhtml");
+        System.out.println("homeBuyer year: " + homeBuyer.getLoanRepaymentYear());
+        try{
+            houseList = homeBuyerControllerLocal.getHouseList(homeBuyer);
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("houseList", houseList);
+            FacesContext.getCurrentInstance().getExternalContext().redirect("houseSuggest.xhtml");
+        }catch(Exception ex){
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Repayment years of loan cannot be larger than 65-age. Please choose again."));
+        }
     }
 }

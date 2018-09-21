@@ -23,13 +23,18 @@ public class HomeBuyerController implements HomeBuyerControllerLocal {
     // "Insert Code > Add Business Method")
     
     @Override
-    public ArrayList <House> getHouseList(HomeBuyer buyer){
+    public ArrayList <House> getHouseList(HomeBuyer buyer) throws Exception{
         returnHouseList =new ArrayList<>();
         
         double monthlyIncome = buyer.getMonthlyIncome()-buyer.getMonthlyExpense();
         
-        int repaymentYear = 20;
-        
+        int repaymentYear = buyer.getLoanRepaymentYear();
+        int age=buyer.getAge();
+        System.out.println("---------age " + age);
+        System.out.println("---------year " + repaymentYear);
+        if ((repaymentYear != 0) && (age+repaymentYear>=65)){
+            throw new Exception("Sum of age and repaymentYear out of limit!");
+        }
         double firstYearPayment =  monthlyIncome * (0.56 - 0.0041*(repaymentYear-5));
 	    
 	   // System.out.println("fyp: "+firstYearPayment);
