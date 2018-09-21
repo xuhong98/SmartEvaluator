@@ -96,16 +96,28 @@
                     </label>
                 </div>
                 <div class="form-row">
+                    <label style="background:#f4f5f7;position: relative; height: 80px;width:30%;margin-left: 35%;margin-top: 10px">
+                        <p:outputLabel for="console" value="Repayment Year of Loan"/>
+                        <p:selectOneRadio id="console" value="#{homeBuyerManagedBean.homeBuyer.loanRepaymentYear}">
+                            <f:selectItem itemLabel="No Loan" itemValue="0" />
+                            <f:selectItem itemLabel="05  years" itemValue="5" />
+                            <f:selectItem itemLabel="10 years" itemValue="10" />
+                            <f:selectItem itemLabel="20 years" itemValue="20" />
+                            <f:selectItem itemLabel="30 years" itemValue="30" />
+                        </p:selectOneRadio>
+                    </label>
+                </div>
+                <div class="form-row">
                     <p:commandButton class="hvr-rectangle-out" value="Explore Ideal House!" 
                                      actionListener="#{homeBuyerManagedBean.exploreHouse}" update="growl"
                                      style="display: inline-block; -webkit-transform: translateZ(0);
-                                        transform: translateZ(0); margin-top: 100px;
+                                        transform: translateZ(0); margin-top: 80px;
                                         box-shadow: 0 0 1px rgba(0, 0, 0, 0);
                                         -webkit-backface-visibility: hidden;
                                         backface-visibility: hidden;
                                         -moz-osx-font-smoothing: grayscale;
                                         position: relative; height: 100px;width:30%;
-                                        background:#8DD679; margin-right: 25px;
+                                        background:#8DD679;
                                         -webkit-transition-property: color;
                                         transition-property: color;
                                         -webkit-transition-duration: 0.3s;
