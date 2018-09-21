@@ -96,6 +96,18 @@
                     </label>
                 </div>
                 <div class="form-row">
+                    <label style="background:#f4f5f7;position: relative; height: 100px;width:30%;">
+                        <p:outputLabel for="console" value="Length of loan"/>
+                        <p:selectOneRadio id="console" value="#{homeBuyerManagedBean.homeBuyer.loanRepaymentYear}">
+                            <f:selectItem itemLabel="No Loan" itemValue="0" />
+                            <f:selectItem itemLabel="5 years" itemValue="5" />
+                            <f:selectItem itemLabel="10 years" itemValue="10" />
+                            <f:selectItem itemLabel="20 years" itemValue="20" />
+                            <f:selectItem itemLabel="30 years" itemValue="30" />
+                        </p:selectOneRadio>
+                    </label>
+                </div>
+                <div class="form-row">
                     <p:commandButton class="hvr-rectangle-out" value="Explore Ideal House!" 
                                      actionListener="#{homeBuyerManagedBean.exploreHouse}" update="growl"
                                      style="display: inline-block; -webkit-transform: translateZ(0);

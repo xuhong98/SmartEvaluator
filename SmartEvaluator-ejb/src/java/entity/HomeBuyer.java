@@ -34,17 +34,20 @@ public class HomeBuyer implements Serializable {
     private Integer age;
     
     private Long estimatedLoan;
+    
+    private Integer loanRepaymentYear;
 
     public HomeBuyer() {
     }
 
-    public HomeBuyer(Long savings, Long monthlyIncome, Long monthlyExpense, Integer age) {
+    public HomeBuyer(Long savings, Long monthlyIncome, Long monthlyExpense, Integer age, Integer loanRepaymentYear) {
         this.savings = savings;
         this.monthlyIncome = monthlyIncome;
         this.monthlyExpense = monthlyExpense;
         this.age = age;
+        this.loanRepaymentYear = loanRepaymentYear;
     }
-
+    
     public String getName() {
         return name;
     }
@@ -52,7 +55,15 @@ public class HomeBuyer implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+    
+    public Integer getLoanRepaymentYear() {
+        return loanRepaymentYear;
+    }
 
+    public void setLoanRepaymentYear(Integer loanRepaymentYear) {
+        this.loanRepaymentYear = loanRepaymentYear;
+    }
+    
     public Long getSavings() {
         return savings;
     }
