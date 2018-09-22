@@ -33,6 +33,35 @@
                                         </a>
                     <h1 class="brand"><a href="index.xhtml" tppabs="#">SMART EVALUATOR</a></h1>
                     <!-- navigation -->
+                    <form>
+                        <h:panelGroup rendered="#{!sessionScope['isLogin']}" style="float:right">
+                            <p:growl id="growl" showDetail="true" sticky="true" /> 
+                            <div class="form-row">
+                                <label>
+                                    <p:inputText styleClass="textInput" id="username" 
+                                                 value="#{homeBuyerManagedBean.adminUsername}" 
+                                                 required="true" requiredMessage="Please enter your username" 
+                                                 placeholder="Username"
+                                                 validatorMessage="Username must be between 4-16 letters/numbers.">
+                                        <f:validateRegex pattern="^[a-zA-Z0-9]{4,16}$" />
+                                    </p:inputText>
+                                </label>
+                            </div>
+                            <div class="form-row">
+                                <label>
+                                    <p:password styleClass="textInput" id="password" 
+                                                value="#{homeBuyerManagedBean.adminPassword}" 
+                                                required="true" requiredMessage="Please enter your password" 
+                                                placeholder="Password"/>
+                                </label>
+                            </div>
+                            <div class="form-row">
+                                <p:commandButton icon="fa fa-home" value="ADMIN LOGIN" style="width:70%;" 
+                                                 actionListener="#{homeBuyerManagedBean.adminLogin}"/>
+                            </div>
+                        </h:panelGroup>
+                    </form>
+                    
                     <nav class="pull-right nav-collapse collapse">
                         <ul id="menu-main" class="nav">
                             <li><a></a></li>
@@ -95,6 +124,24 @@
                     </label>
                 </div>
                 <div class="form-row">
+                    <label>
+                        <p:inputText styleClass="textInput" id="homeSize" 
+                                     value="#{homeBuyerManagedBean.homeBuyer.homeSize}" 
+                                    required="true" requiredMessage="Please enter your Home Size" 
+                                    placeholder="Home Size" style="width: 20%"/>
+                    </label>
+                </div>
+                
+                <div class="form-row">
+                    <label style="background:#f4f5f7;position: relative; height: 40px;width:15%;margin-left:42.5%;margin-top: 10px">
+                        <p:selectOneRadio value="#{homeBuyerManagedBean.married}">
+                            <f:selectItem itemLabel="Married" itemValue="true" />
+                            <f:selectItem itemLabel="Single" itemValue="false" />
+                        </p:selectOneRadio>
+                    </label>
+                </div>
+                
+                <div class="form-row">
                     <label style="background:#f4f5f7;position: relative; height: 80px;width:21%;margin-left:39.5%;margin-top: 10px">
                         <p:outputLabel value="Repayment Year of Loan"/>
                         <h:selectOneRadio converter="javax.faces.Integer" value="#{homeBuyerManagedBean.homeBuyer.loanRepaymentYear}">
@@ -110,7 +157,7 @@
                     <p:commandButton class="hvr-rectangle-out" value="Explore Ideal House!" 
                                      actionListener="#{homeBuyerManagedBean.exploreHouse}" update="growl"
                                      style="display: inline-block; -webkit-transform: translateZ(0);
-                                        transform: translateZ(0); margin-top: 80px;
+                                        transform: translateZ(0); margin-top: 40px;
                                         box-shadow: 0 0 1px rgba(0, 0, 0, 0);
                                         -webkit-backface-visibility: hidden;
                                         backface-visibility: hidden;
