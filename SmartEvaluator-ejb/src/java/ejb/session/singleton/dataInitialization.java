@@ -12,16 +12,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import javax.ejb.LocalBean;
 import javax.ejb.Startup;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.PersistenceContext;
 import jxl.Workbook;
 import jxl.Sheet;
 /**
@@ -37,6 +32,9 @@ public class dataInitialization {
 //    @PersistenceContext(unitName = "SmartEvaluator-ejbPU")
 //    private EntityManager em;
     public static ArrayList<House> houseList=new ArrayList<>();
+    public static ArrayList<HomeBuyer> houseBuyerInfo = new ArrayList<HomeBuyer>();
+    public static ArrayList<Long> queryTimeList = new ArrayList<>();
+            
     public dataInitialization() {
 
     }
