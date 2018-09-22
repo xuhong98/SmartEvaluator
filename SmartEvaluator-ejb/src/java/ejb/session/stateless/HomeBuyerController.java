@@ -12,6 +12,7 @@ import entity.House;
 import java.util.ArrayList;
 import ejb.session.singleton.dataInitialization;
 import static ejb.session.singleton.dataInitialization.houseList;
+
 /**
  *
  * @author hongxu
@@ -24,6 +25,7 @@ public class HomeBuyerController implements HomeBuyerControllerLocal {
     
     @Override
     public ArrayList <House> getHouseList(HomeBuyer buyer) throws Exception{
+        long startTime = System.nanoTime();
         returnHouseList =new ArrayList<>();
         
         double monthlyIncome = buyer.getMonthlyIncome()-buyer.getMonthlyExpense();
@@ -90,6 +92,15 @@ public class HomeBuyerController implements HomeBuyerControllerLocal {
         //get house
 //        System.out.print(dataInitialization.houseList);
         //find proper house
+        long stopTime = System.nanoTime();
+        long elapsedTime = stopTime-startTime;
+//        long vari=1000000L;
+//        elapsedTime=(elapsedTime/vari);
+        double timee=(double)elapsedTime/1000000;
+        
+        dataInitialization.queryTimeList.add(timee);
+        
+        System.out.print(dataInitialization.queryTimeList);
         return returnHouseList;
     }
    
