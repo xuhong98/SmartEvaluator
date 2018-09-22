@@ -12,10 +12,8 @@ import entity.House;
 import java.util.ArrayList;
 import ejb.session.singleton.dataInitialization;
 import static ejb.session.singleton.dataInitialization.houseList;
-/**
- *
- * @author hongxu
- */
+
+
 @Stateless
 public class HomeBuyerController implements HomeBuyerControllerLocal {
     ArrayList <House> returnHouseList;
