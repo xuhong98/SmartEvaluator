@@ -5,11 +5,14 @@
  */
 package jsf.managedBean;
 
+import ejb.session.singleton.dataInitialization;
+import ejb.session.stateless.AdminControllerLocal;
 import entity.House;
 import javax.faces.bean.ManagedBean;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 import javax.enterprise.context.SessionScoped;
@@ -23,16 +26,20 @@ import javax.faces.view.ViewScoped;
 @ViewScoped
 public class HouseListManagedBean implements Serializable{
 
+    @EJB(name = "AdminControllerLocal")
+    private AdminControllerLocal adminControllerLocal;
+
     private List<House> houseList;
     FacesContext context;
     HttpSession session;
+    //private double queryTime;
     
     public HouseListManagedBean() {
     }
 
     @PostConstruct
     public void postConstruct() {
-        //System.out.println("又进来啦");
+        //queryTime = adminControllerLocal.getQueryTime();
         context = FacesContext.getCurrentInstance();
         session = (HttpSession) context.getExternalContext().getSession(true);
         houseList = (List<House>) session.getAttribute("houseList");
@@ -47,6 +54,15 @@ public class HouseListManagedBean implements Serializable{
     public void setHouseList(List<House> houseList) {
         this.houseList = houseList;
     }
+//
+//    public double getQueryTime() {
+//        return queryTime;
+//    }
+//
+//    public void setQueryTime(double queryTime) {
+//        this.queryTime = queryTime;
+//    }
+    
     
     
 }

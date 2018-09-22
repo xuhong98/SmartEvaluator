@@ -15,4 +15,6 @@ import uitl.exceptions.InvalidLoginCredentialException;
 @Local
 public interface AdminControllerLocal {
     public Boolean login(String username, String password) throws InvalidLoginCredentialException;
+
+    public double getQueryTime();
 }

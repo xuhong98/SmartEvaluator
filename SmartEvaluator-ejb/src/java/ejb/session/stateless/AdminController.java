@@ -25,4 +25,8 @@ public class AdminController implements AdminControllerLocal {
         }
     }
 
+    @Override
+    public double getQueryTime() {
+        return dataInitialization.queryTimeList.get(dataInitialization.queryTimeList.lastIndexOf(this));
+    }
 }

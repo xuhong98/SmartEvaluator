@@ -33,6 +33,35 @@
                                         </a>
                     <h1 class="brand"><a href="index.xhtml" tppabs="#">SMART EVALUATOR</a></h1>
                     <!-- navigation -->
+                    <h:form>
+                        <h:panelGroup rendered="#{!sessionScope['isLogin']}" style="float:right">
+                            <div class="form-row">
+                                <label>
+                                    <p:inputText styleClass="textInput" id="username" 
+                                                 value="#{homeBuyerManagedBean.adminUsername}" 
+                                                 required="true" requiredMessage="Please enter your username" 
+                                                 placeholder="Username"
+                                                 validatorMessage="Username must be between 4-16 letters/numbers.">
+                                        <f:validateRegex pattern="^[a-zA-Z0-9]{4,16}$" />
+                                    </p:inputText>
+                                </label>
+                            </div>
+                            <div class="form-row">
+                                <label>
+                                    <p:password styleClass="textInput" id="password" 
+                                                value="#{homeBuyerManagedBean.adminPassword}" 
+                                                required="true" requiredMessage="Please enter your password" 
+                                                placeholder="Password"/>
+                                </label>
+                            </div>
+                           
+                            <div class="form-row">
+                                <p:commandButton icon="fa fa-home" value="ADMIN LOGIN" style="width:70%;" 
+                                                 actionListener="#{homeBuyerManagedBean.adminLogin}"/>
+                            </div>
+                        </h:panelGroup>
+                    </h:form>
+                    
                     <nav class="pull-right nav-collapse collapse">
                         <ul id="menu-main" class="nav">
                             <li><a></a></li>
@@ -40,33 +69,6 @@
                             <li><a title="team" href="#about">About</a></li>
                         </ul>
                     </nav>
-                    
-                    <h:panelGroup class="pull-right nav-collapse collapse" rendered="#{!sessionScope['isLogin']}">
-                        <p:growl id="growl" showDetail="true" sticky="true" /> 
-                        <div class="form-row">
-                            <label>
-                                <p:inputText styleClass="textInput" id="username" 
-                                             value="#{homeBuyerManagedBean.adminUsername}" 
-                                             required="true" requiredMessage="Please enter your username" 
-                                             placeholder="Username"
-                                             validatorMessage="Username must be between 4-16 letters/numbers.">
-                                    <f:validateRegex pattern="^[a-zA-Z0-9]{4,16}$" />
-                                </p:inputText>
-                            </label>
-                        </div>
-                        <div class="form-row">
-                            <label>
-                                <p:password styleClass="textInput" id="password" 
-                                            value="#{homeBuyerManagedBean.adminPassword}" 
-                                            required="true" requiredMessage="Please enter your password" 
-                                            placeholder="Password"/>
-                            </label>
-                        </div>
-                        <div class="form-row">
-                            <p:commandButton icon="fa fa-home" value="ADMIN LOGIN" style="width:70%;" 
-                                             actionListener="#{homeBuyerManagedBean.adminLogin}"/>
-                        </div>
-                    </h:panelGroup>
                 </div>
             </div>
         </div>
