@@ -8,9 +8,11 @@ Smart Evaluator is an online web application, which helps home buyers analyze th
 4.	We only consider age, saving, monthly income and monthly expense as factors to analyse users’ eligibility and affordability to buy the house.
 
 ## Architecture diagram and Technology Stack
-We use JSF web application, Java, Netbeans, Python and web scraping as framework and programming language to solve this task.
-
-
+<p>
+  We use JSF web application, Java, Netbeans, Python and web scraping as framework and programming language to solve this task.
+</p>
+<img width="400" src="img/architecture.png">
+<img width="600" src="img/stack.png">
 
 ## Algorithm
 The house must have a price below 0.8*(personal savings+ total amount of loan he/she can apply). Personal savings are collected directly from the user and the total amount of loan is calculated according to regression analysis.
@@ -23,8 +25,8 @@ A website about Singapore condo information is targeted for web scraping. Seleni
 -	Open the source code in github using netbean IDE. (preferrably 8.2 version)
 -	Click on the two Java EE modules to open them (“Inside Netbeans project navigation bar, there is a folder named “Java EE modules”)
 -	Import Jar files
-1) import  jxl-2.6.12.jar into SmartEvaluator-ejb module.
-2) import the rest of 5 jar packages (“redmond-1.0.10.jar”, “xmlbeans-2.6.0.jar”, “itext-2.1.7.jar”, “poi-3.7.jar”, “primefaces-6.1-jar”) into SmartEvaluator-war module.
+- import  jxl-2.6.12.jar into SmartEvaluator-ejb module.
+- import the rest of 5 jar packages (“redmond-1.0.10.jar”, “xmlbeans-2.6.0.jar”, “itext-2.1.7.jar”, “poi-3.7.jar”, “primefaces-6.1-jar”) into SmartEvaluator-war module.
 -	Open Service window, start GlassFish server
 -	Change Excel file absolute path in dataInitilizaiton.java line 57.
 -	Right click the project directory to build the project.
