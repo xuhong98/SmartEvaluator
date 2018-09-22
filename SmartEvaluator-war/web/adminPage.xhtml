@@ -43,6 +43,12 @@
             </div>
         </div>
     </div>
+
+    <p:chart type="donut" model="#{adminPageManagedBean.donutModel1}" style="width:400px;height:300px; position:fixed; top:25%" />
+    <p:chart type="line" model="#{adminPageManagedBean.lineModel1}" style="height:300px; position:fixed; left:50%; top:25%"/>
+    <p:chart type="bar" model="#{adminPageManagedBean.barModel}" style="height:300px; position:fixed;  top:75%"/>
+    <p:chart type="pie" model="#{adminPageManagedBean.pieModel1}" style="width:400px;height:300px;top:75%;left:50%;position:fixed "/>
+
 </h:body>
 </html>
 

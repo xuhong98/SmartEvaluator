@@ -99,4 +99,5 @@ public class HomeBuyerController implements HomeBuyerControllerLocal {
         System.out.print(dataInitialization.queryTimeList);
         return returnHouseList;
     }
+   
 }

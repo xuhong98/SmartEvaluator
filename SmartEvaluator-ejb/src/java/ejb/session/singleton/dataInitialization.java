@@ -6,7 +6,6 @@
 package ejb.session.singleton;
 
 import ejb.session.stateless.HomeBuyerControllerLocal;
-import entity.Admin;
 import entity.HomeBuyer;
 import entity.House;
 import java.io.File;
@@ -35,10 +34,9 @@ public class dataInitialization {
     public static ArrayList<House> houseList=new ArrayList<>();
     public static ArrayList<HomeBuyer> houseBuyerInfo = new ArrayList<HomeBuyer>();
     public static ArrayList<Double> queryTimeList = new ArrayList<>();
-    public static Admin admin = new Admin("admin", "password");        
-    
+            
     public dataInitialization() {
-        
+
     }
 
     @PostConstruct
@@ -54,7 +52,7 @@ public class dataInitialization {
     
     private void loadHouseData(){
         System.out.print("Start handling data");
-        File file=new File("/Users/hongxu/Desktop/SmartEvaluator/housingInfo.xls");
+        File file=new File("D:\\Citi\\SmartEvaluator\\housingInfo.xls");
         try{
             InputStream stream=new FileInputStream(file.getAbsolutePath());
             Workbook wb=Workbook.getWorkbook(stream);
