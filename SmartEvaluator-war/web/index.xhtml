@@ -33,9 +33,8 @@
                                         </a>
                     <h1 class="brand"><a href="index.xhtml" tppabs="#">SMART EVALUATOR</a></h1>
                     <!-- navigation -->
-                    <form>
+                    <h:form>
                         <h:panelGroup rendered="#{!sessionScope['isLogin']}" style="float:right">
-                            <p:growl id="growl" showDetail="true" sticky="true" /> 
                             <div class="form-row">
                                 <label>
                                     <p:inputText styleClass="textInput" id="username" 
@@ -55,12 +54,13 @@
                                                 placeholder="Password"/>
                                 </label>
                             </div>
+                           
                             <div class="form-row">
                                 <p:commandButton icon="fa fa-home" value="ADMIN LOGIN" style="width:70%;" 
                                                  actionListener="#{homeBuyerManagedBean.adminLogin}"/>
                             </div>
                         </h:panelGroup>
-                    </form>
+                    </h:form>
                     
                     <nav class="pull-right nav-collapse collapse">
                         <ul id="menu-main" class="nav">
