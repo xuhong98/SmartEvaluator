@@ -37,7 +37,7 @@
                     <!-- Responsive navbar -->
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
                                         </a>
-                    <h1 class="brand"><a>SMART EVALUATOR</a></h1>
+                    <h1 class="brand"><a href="index.xhtml" tppabs="#">SMART EVALUATOR</a></h1>
                     <!-- information of user -->
                     <nav class="pull-right nav-collapse collapse">
                         <ul id="menu-main" class="nav">
@@ -52,38 +52,45 @@
     
     <div id="header-wrapper" class="header-slider" style="background: url('https://sotapa.org/wp-content/uploads/2018/01/Showhouse-pic.jpg');background-repeat: no-repeat;
         background-size: 100% 100%;">
-        <p:accordionPanel multiple="true" style = "width: 90%; left: 5%" >
-            <p:tab title="House suggests based on your informantion analysis">
-                <h:form id="houseList" style = "width: 80%">
-                    <p:repeat value="#{houseListManagedBean.houseList}" var="house"> 
-                        <h:panelGrid columns="2">
-                            <p:outputPanel>
-                                <h:panelGrid columns="2" cellpadding="5">
-                                    <h:outputText value="House Name" />
-                                    <h:outputText value="#{house.houseName}" style="font-weight: bold"/>
-                                    
-                                    <h:outputText value="Address" />
-                                    <h:outputText value="#{house.address}" style="font-weight: bold"/>
+        <h:form>  
+            <p:dataTable
+                         value="#{houseListManagedBean.houseList}"
+                         var="house"
+                         rows="10" paginator="true" 
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} 
+                         {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" 
+                         rowsPerPageTemplate="10,20,30" paginatorPosition="bottom" reflow="true">
 
-                                    <h:outputText value="Area" />
-                                    <h:outputText value="#{house.area}sqft" style="font-weight: bold"/>
+                <f:facet name="header">
+                    <p:outputPanel style="text-align: center;">
+                        <h:outputText value="House suggests based on your informantion analysis" />
+                    </p:outputPanel>
+                </f:facet>
+                <p:column headerText="House Name" sortBy="#{house.houseName}" filterBy="#{house.houseName}" filterMatchMode="contains">
+                    <h:outputText value="#{house.houseName}" />
+                </p:column>
 
-                                    <h:outputText value="Total Price" />
-                                    <h:outputText value="S$#{house.totalPrice}" style="font-weight: bold"/>
-                                    
-                                    <h:outputText value="Unit Price" />
-                                    <h:outputText value="S$#{house.unitPrice}" style="font-weight: bold"/>
-                                
-                                    <h:outputText value="House Introduction Link" />
-                                    <h:outputText value="#{house.link}" style="font-weight: bold"/>
-                                </h:panelGrid>
-                            </p:outputPanel>
-                        </h:panelGrid>
-                        <hr />
-                    </p:repeat>
-                </h:form>
-            </p:tab>
-        </p:accordionPanel>
+                <p:column headerText="House Address" sortBy="#{house.address}" filterBy="#{house.address}" filterMatchMode="contains">
+                    <h:outputText value="#{house.address}" />
+                </p:column>
+
+                <p:column headerText="House Area (sqft)" sortBy="#{house.area}" filterBy="#{house.area}" filterMatchMode="contains">
+                    <h:outputText value="#{house.area}" />
+                </p:column>
+
+                <p:column headerText="Total Price (S$)" sortBy="#{house.totalPrice}" filterBy="#{house.totalPrice}" filterMatchMode="contains">
+                    <h:outputText value="#{house.totalPrice}"/>
+                </p:column>
+                
+                <p:column headerText="Unit Price (S$)" sortBy="#{house.unitPrice}" filterBy="#{house.unitPrice}" filterMatchMode="contains">
+                    <h:outputText value="#{house.unitPrice}" />
+                </p:column>
+                
+                <p:column headerText="Details">
+                    <a href="#{house.link}"><font color="#2964db">More Info</font></a>
+                </p:column>
+            </p:dataTable>
+        </h:form> 
     </div>
     
      <footer>

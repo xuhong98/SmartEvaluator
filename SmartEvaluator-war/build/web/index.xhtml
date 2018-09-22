@@ -29,10 +29,9 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-                    <!-- Responsive navbar -->
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
                                         </a>
-                    <h1 class="brand"><a>SMART EVALUATOR</a></h1>
+                    <h1 class="brand"><a href="index.xhtml" tppabs="#">SMART EVALUATOR</a></h1>
                     <!-- navigation -->
                     <nav class="pull-right nav-collapse collapse">
                         <ul id="menu-main" class="nav">
@@ -96,28 +95,28 @@
                     </label>
                 </div>
                 <div class="form-row">
-                    <label style="background:#f4f5f7;position: relative; height: 100px;width:30%;">
-                        <p:outputLabel for="console" value="Length of loan"/>
-                        <p:selectOneRadio id="console" value="#{homeBuyerManagedBean.homeBuyer.loanRepaymentYear}">
+                    <label style="background:#f4f5f7;position: relative; height: 80px;width:21%;margin-left:39.5%;margin-top: 10px">
+                        <p:outputLabel value="Repayment Year of Loan"/>
+                        <h:selectOneRadio converter="javax.faces.Integer" value="#{homeBuyerManagedBean.homeBuyer.loanRepaymentYear}">
                             <f:selectItem itemLabel="No Loan" itemValue="0" />
                             <f:selectItem itemLabel="5 years" itemValue="5" />
                             <f:selectItem itemLabel="10 years" itemValue="10" />
                             <f:selectItem itemLabel="20 years" itemValue="20" />
                             <f:selectItem itemLabel="30 years" itemValue="30" />
-                        </p:selectOneRadio>
+                        </h:selectOneRadio>
                     </label>
                 </div>
                 <div class="form-row">
                     <p:commandButton class="hvr-rectangle-out" value="Explore Ideal House!" 
                                      actionListener="#{homeBuyerManagedBean.exploreHouse}" update="growl"
                                      style="display: inline-block; -webkit-transform: translateZ(0);
-                                        transform: translateZ(0); margin-top: 100px;
+                                        transform: translateZ(0); margin-top: 80px;
                                         box-shadow: 0 0 1px rgba(0, 0, 0, 0);
                                         -webkit-backface-visibility: hidden;
                                         backface-visibility: hidden;
                                         -moz-osx-font-smoothing: grayscale;
                                         position: relative; height: 100px;width:30%;
-                                        background:#8DD679; margin-right: 25px;
+                                        background:#8DD679;
                                         -webkit-transition-property: color;
                                         transition-property: color;
                                         -webkit-transition-duration: 0.3s;
