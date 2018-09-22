@@ -33,7 +33,7 @@ public class dataInitialization {
 //    private EntityManager em;
     public static ArrayList<House> houseList=new ArrayList<>();
     public static ArrayList<HomeBuyer> houseBuyerInfo = new ArrayList<HomeBuyer>();
-    public static ArrayList<Long> queryTimeList = new ArrayList<>();
+    public static ArrayList<Double> queryTimeList = new ArrayList<>();
             
     public dataInitialization() {
 
