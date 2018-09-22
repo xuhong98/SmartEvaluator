@@ -7,7 +7,7 @@ Smart Evaluator is an online web application, which helps home buyers analyze th
 3.	We only collect house data from 99.co website.
 4.	We only consider age, saving, monthly income and monthly expense as factors to analyse users’ eligibility and affordability to buy the house.
 
-## Architecture diagram and Stack
+## Architecture diagram and Technology Stack
 We use JSF web application, Java, Netbeans, Python and web scraping as framework and programming language to solve this task.
 
 
