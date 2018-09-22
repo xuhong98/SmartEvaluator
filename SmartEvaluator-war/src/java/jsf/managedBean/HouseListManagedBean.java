@@ -62,7 +62,4 @@ public class HouseListManagedBean implements Serializable{
 //    public void setQueryTime(double queryTime) {
 //        this.queryTime = queryTime;
 //    }
-    
-    
-    
 }
