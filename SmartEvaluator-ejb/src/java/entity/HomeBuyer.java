@@ -36,17 +36,40 @@ public class HomeBuyer implements Serializable {
     private Long estimatedLoan;
     
     private Integer loanRepaymentYear;
+    
+    private Integer homeSize;
+    
+    private Boolean married;
 
     public HomeBuyer() {
     }
 
-    public HomeBuyer(Long savings, Long monthlyIncome, Long monthlyExpense, Integer age, Integer loanRepaymentYear) {
+    public HomeBuyer(Long savings, Long monthlyIncome, Long monthlyExpense, Integer age, Integer loanRepaymentYear, Integer homeSize, Boolean married) {
         this.savings = savings;
         this.monthlyIncome = monthlyIncome;
         this.monthlyExpense = monthlyExpense;
         this.age = age;
         this.loanRepaymentYear = loanRepaymentYear;
+        this.homeSize = homeSize;
+        this.married = married;
     }
+
+    public Integer getHomeSize() {
+        return homeSize;
+    }
+
+    public void setHomeSize(Integer homeSize) {
+        this.homeSize = homeSize;
+    }
+
+    public Boolean getMarried() {
+        return married;
+    }
+
+    public void setMarried(Boolean married) {
+        this.married = married;
+    }
+    
     
     public String getName() {
         return name;
