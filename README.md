@@ -1,5 +1,19 @@
 # SmartEvaluator
 
+# Team Information
+1. Xu Hong : Frontend (NUS-Inforamtion System)
+2. Du Li : Backend and data (SUTD-Information System Technology and Design)
+3. Huang Xiangyuan : Backend and data (NUS-Computer Science)
+
+
+# Framework and IDE
+JSF
+NetBeans
+
+# Language 
+Java
+Python
+
 
 All the summaries and diagrams are in the projectDetails.docx file in this git repo.
 
