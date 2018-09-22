@@ -5,9 +5,11 @@
  */
 package jsf.managedBean;
 
+import java.io.IOException;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+<<<<<<< HEAD
 import java.util.Map;
 import org.primefaces.model.chart.DonutChartModel;
 import java.util.LinkedHashMap;
@@ -20,6 +22,12 @@ import org.primefaces.model.chart.LineChartSeries;
 import java.util.Random;
 import org.primefaces.model.chart.BarChartModel;
 import org.primefaces.model.chart.PieChartModel;
+=======
+import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
+import javax.servlet.http.HttpSession;
+
+>>>>>>> 6047a78aa4ebbbedecbaa581c0f80cc0367eda75
 /**
  *
  * @author hongxu
@@ -80,6 +88,7 @@ public class AdminPageManagedBean implements Serializable {
     public AdminPageManagedBean() {
     }
     
+
     @PostConstruct
     public void init() {
         createDonutModels();
@@ -223,5 +232,10 @@ public class AdminPageManagedBean implements Serializable {
         pieModel1.setTitle("Query Time Distribution");
         pieModel1.setLegendPosition("w");
         pieModel1.setShadow(false);
+
+    public void logout(ActionEvent event) throws IOException {
+        ((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).invalidate();
+        FacesContext.getCurrentInstance().getExternalContext().redirect("index.xhtml");
+
     }
 }
