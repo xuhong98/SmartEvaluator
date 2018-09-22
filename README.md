@@ -2,16 +2,16 @@
 Smart Evaluator is an online web application, which helps home buyers analyze their financial situation and eligibility to suggest suitable houses to them based on users’ savings, monthly expense, monthly income and age. 
 
 ### Home Page
-<img width="400" src="img/demo1.png">
-<img width="400" src="img/demo2.png">
+<img width="600" src="img/demo1.png">
+<img width="600" src="img/demo2.png">
 
 ### House Suggest Page
 <p> A series of houses will be recommended based on the personal information users enter:
-<img width="400" src="img/demo3.png">
+<img width="600" src="img/demo3.png">
 
 ### Admin Page
 <p>Admin can view all the user information distributions as well as monitor the process</p>
-<img width="400" src="img/demo4.png">
+<img width="600" src="img/demo4.png">
 
 ## Assumption: 
 1.	Home property type is limited to condo.
