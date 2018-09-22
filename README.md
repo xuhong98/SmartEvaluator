@@ -8,9 +8,11 @@ Smart Evaluator is an online web application, which helps home buyers analyze th
 4.	We only consider age, saving, monthly income and monthly expense as factors to analyse users’ eligibility and affordability to buy the house.
 
 ## Architecture diagram and Technology Stack
-We use JSF web application, Java, Netbeans, Python and web scraping as framework and programming language to solve this task.
-
-
+<p>
+  We use JSF web application, Java, Netbeans, Python and web scraping as framework and programming language to solve this task.
+</p>
+<img width="350" src="img/architecture.png">
+<img width="350" src="img/stack.png">
 
 ## Algorithm
 The house must have a price below 0.8*(personal savings+ total amount of loan he/she can apply). Personal savings are collected directly from the user and the total amount of loan is calculated according to regression analysis.
